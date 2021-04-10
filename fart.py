@@ -35,20 +35,13 @@ def swap(array, a, b):
 
 
 def insertion_sort(array):
-    first = 1
-    last = len(array)
-    posofnext = last-1
-    while posofnext >= first:
-        print("flag")
+    for posofnext in range(1, len(array)):
         Next = array[posofnext]
-        current = posofnext
-        while current < last and Next > array[current-1]:
-            print(current)
-            current += 1
-            array[current-2] = array[current-1]
-        print(current)
-        array[current-2] = Next
-        posofnext -= 1
+        current = posofnext-1
+        while current >= 0 and Next < array[current]:
+            array[current + 1] = array[current]
+            current -= 1
+        array[current + 1] = Next
     return array
 
 
