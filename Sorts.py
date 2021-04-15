@@ -30,7 +30,6 @@ def main_test():
     else:
         print("Not found")
 
-
 def bubble_sort(array):
     last = len(array)+1
     swapped = 1
@@ -45,7 +44,6 @@ def bubble_sort(array):
             last -= 1
     return array
 
-
 def insertion_sort(array):
     for posofnext in range(1, len(array)):
         Next = array[posofnext]
@@ -56,7 +54,6 @@ def insertion_sort(array):
         array[current + 1] = Next
     return array
 
-
 def selection_sort(array):
     for index in range(len(array)-1):
         Min = index
@@ -65,7 +62,6 @@ def selection_sort(array):
                 unsorted = Min
         array[index], array[unsorted] = array[unsorted], array[index]
     return array
-
 
 def binary_search(array, target):
     low = 0
@@ -80,12 +76,10 @@ def binary_search(array, target):
             low = mid + 1
     return 0
 
-
 def linear_search(array, target):
     for index in range(len(array)):
         if array[index] == target:
             return 1
     return 0
-
 
 main_test()
