@@ -1,9 +1,10 @@
 def main_test():
     array = []
-    n = int(input("Enter number of elements: "))
-    for i in range(0, n):
-        ele = int(input())
-        array.append(ele)
+    num_elements = int(input("Enter number of elements: "))
+    for i in range(0, num_elements):
+        element = int(input())
+        array.append(element)
+    print(array)
     sort = int(input("Enter 1 for bubble, 2 for insertion, 3 for selection: "))
     if sort == 1:
         bubble_sort(array)
@@ -13,7 +14,6 @@ def main_test():
         selection_sort(array)
     print(array)
 
-
 def bubble_sort(array):
     last = len(array)+1
     swapped = 1
@@ -21,18 +21,12 @@ def bubble_sort(array):
         swapped = 0
         index = 1
         if array[index] > array[index+1]:
-            swap(array, index, index+1)
+            array[index], array[index+1] = array[index+1], array[index]
             swapped = 1
             if index < last:
                 index = index+1
             last -= 1
     return array
-
-
-def swap(array, a, b):
-    array[a], array[b] = array[b], array[a]
-    return array
-
 
 def insertion_sort(array):
     for posofnext in range(1, len(array)):
@@ -44,9 +38,13 @@ def insertion_sort(array):
         array[current + 1] = Next
     return array
 
-
 def selection_sort(array):
-    B = 1
-
+    for index in range(len(array)-1):
+        Min = index
+        for unsorted in range(index+1, len(array)):
+            if array[Min] < array[unsorted]:
+                unsorted = Min
+        array[index], array[unsorted] = array[unsorted], array[index]
+    return array
 
 main_test()
