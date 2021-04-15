@@ -1,9 +1,9 @@
 def main_test():
     array = []
-    n = int(input("Enter number of elements: "))
-    for i in range(0, n):
-        ele = int(input())
-        array.append(ele)
+    num_elements = int(input("Enter number of elements: "))
+    for i in range(0, num_elements):
+        element = int(input())
+        array.append(element)
     print(array)
     searchsort = int(input("Enter 1 for sort, 2 for search"))
     if searchsort == 1:
