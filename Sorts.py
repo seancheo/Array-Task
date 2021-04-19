@@ -1,47 +1,41 @@
 def main_test():
-    array = []
-    num_elements = int(input("Enter number of elements: "))
-    for i in range(0, num_elements):
-        element = int(input())
-        array.append(element)
-    print(array)
-    searchsort = int(input("Enter 1 for sort, 2 for search"))
-    if searchsort == 1:
-        sort = int(
-            input("Enter 1 for bubble, 2 for insertion, 3 for selection: "))
-        if sort == 1:
+    array = []  # creates a list with intrinsic documentation indicating it is the array
+    num_elements = int(input("Enter number of elements: ")) # User inputs the number of elements
+    for i in range(0, num_elements): # A for loop is used, repeating as many times as there are elements
+        element = int(input("Enter element: "))  # takes input of the element
+        array.append(element)  # Appends the element to the array
+    print(array)  # Shows the user the array before processing 
+    searchsort = int(input("Enter 1 for sort, 2 for search")) # inputs the variable used to decide which type of algorithm to use
+    if searchsort == 1:  # checks if the user selected search
+        sort = int(input("Enter 1 for bubble, 2 for insertion, 3 for selection: ")) # inputs the variable for type of search
+        if sort == 1:  # checks if bubble is selected
             bubble_sort(array)
-        if sort == 2:
+        if sort == 2:  # checks if insertion is selected
             insertion_sort(array)
-        if sort == 3:
+        if sort == 3:  # checks if selection is selected
             selection_sort(array)
-        print(array)
+        print("The sorted array is: ", array)  # prints the sorted array
     else:
-        search = int(
-            input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array"))
-        target = int(input("Enter the target:"))
-        found = 0
+        search = int(input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array")) # inputs the type of search
+        target = int(input("Enter the target:"))  # inputs the target
         if search == 1:
             found = binary_search(array, target)
         if search == 2:
             found = linear_search(array, target)
-    if found == 1:
-        print("Found")
-    else:
-        print("Not found")
+    if True:
+        try:
+            if found == 1:
+                print("Found")
+            else:
+                print("Not found")
+        except UnboundLocalError:
+            pass
 
 def bubble_sort(array):
-    last = len(array)+1
-    swapped = 1
-    while swapped == 1:
-        swapped = 0
-        index = 1
-        if array[index] > array[index+1]:
-            array[index], array[index+1] = array[index+1], array[index]
-            swapped = 1
-            if index < last:
-                index = index+1
-            last -= 1
+    for index in range(len(array)):
+        for index in range(len(array)-1):
+            if array[index] > array[index+1]:
+                array[index], array[index+1] = array[index+1], array[index]
     return array
 
 def insertion_sort(array):
