@@ -22,8 +22,7 @@ def main_test():
         print("The sorted array is: ", array)  # prints the sorted array
     else:
         # inputs the type of search
-        search = int(
-            input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array"))
+        search = int(input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array"))
         target = int(input("Enter the target:"))  # inputs the target
         if search == 1:
             found = binary_search(array, target)
