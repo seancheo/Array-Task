@@ -1,13 +1,18 @@
 def main_test():
     array = []  # creates a list with intrinsic documentation indicating it is the array
-    num_elements = int(input("Enter number of elements: ")) # User inputs the number of elements
-    for i in range(0, num_elements): # A for loop is used, repeating as many times as there are elements
+    # User inputs the number of elements
+    num_elements = int(input("Enter number of elements: "))
+    # A for loop is used, repeating as many times as there are elements
+    for i in range(0, num_elements):
         element = int(input("Enter element: "))  # takes input of the element
         array.append(element)  # Appends the element to the array
-    print(array)  # Shows the user the array before processing 
-    searchsort = int(input("Enter 1 for sort, 2 for search")) # inputs the variable used to decide which type of algorithm to use
+    print(array)  # Shows the user the array before processing
+    # inputs the variable used to decide which type of algorithm to use
+    searchsort = int(input("Enter 1 for sort, 2 for search"))
     if searchsort == 1:  # checks if the user selected search
-        sort = int(input("Enter 1 for bubble, 2 for insertion, 3 for selection: ")) # inputs the variable for type of search
+        # inputs the variable for type of search
+        sort = int(
+            input("Enter 1 for bubble, 2 for insertion, 3 for selection: "))
         if sort == 1:  # checks if bubble is selected
             bubble_sort(array)
         if sort == 2:  # checks if insertion is selected
@@ -16,7 +21,9 @@ def main_test():
             selection_sort(array)
         print("The sorted array is: ", array)  # prints the sorted array
     else:
-        search = int(input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array")) # inputs the type of search
+        # inputs the type of search
+        search = int(
+            input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array"))
         target = int(input("Enter the target:"))  # inputs the target
         if search == 1:
             found = binary_search(array, target)
@@ -49,12 +56,12 @@ def insertion_sort(array):
     return array
 
 def selection_sort(array):
-    for index in range(len(array)-1):
+    for index in range(len(array)):
         Min = index
         for unsorted in range(index+1, len(array)):
-            if array[Min] < array[unsorted]:
-                unsorted = Min
-        array[index], array[unsorted] = array[unsorted], array[index]
+            if array[Min] > array[unsorted]:
+                Min = unsorted
+        array[Min], array[index] = array[index], array[Min]
     return array
 
 def binary_search(array, target):
