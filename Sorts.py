@@ -35,14 +35,12 @@ def main_test():
         else:
             print("Not found")
 
-
 def bubble_sort(array):
     for index in range(len(array)):
         for index in range(len(array)-1):
             if array[index] > array[index+1]:
                 array[index], array[index+1] = array[index+1], array[index]
     return array
-
 
 def insertion_sort(array):
     for posofnext in range(1, len(array)):
@@ -54,7 +52,6 @@ def insertion_sort(array):
         array[current + 1] = Next
     return array
 
-
 def selection_sort(array):
     for index in range(len(array)):
         Min = index
@@ -64,13 +61,12 @@ def selection_sort(array):
         array[Min], array[index] = array[index], array[Min]
     return array
 
-
 def binary_search(array, target):
     global found
     low = 0
     high = len(array)-1
     while high >= low:
-        mid = (high + low) // 2
+        mid = (high + low) / 2
         if target == array[mid]:
             found = True
         if target < array[mid]:
@@ -79,14 +75,11 @@ def binary_search(array, target):
             low = mid + 1
     return
 
-
 def linear_search(array, target):
     global found
     for index in range(len(array)):
         if array[index] == target:
             found = True
-            return found
     return
-
 
 main_test()
