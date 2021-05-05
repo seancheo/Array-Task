@@ -22,20 +22,19 @@ def main_test():
         print("The sorted array is: ", array)  # prints the sorted array
     else:
         # inputs the type of search
-        search = int(input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array"))
+        search = int(
+            input("Enter 1 for Binary, 2 for Linear. Note:Binary requires a sorted array"))
         target = int(input("Enter the target:"))  # inputs the target
+        found = False
         if search == 1:
-            found = binary_search(array, target)
+            binary_search(array, target)
         if search == 2:
-            found = linear_search(array, target)
-    if True:
-        try:
-            if found == 1:
-                print("Found")
-            else:
-                print("Not found")
-        except UnboundLocalError:
-            pass
+            linear_search(array, target)
+        if found == True:
+            print("Found")
+        else:
+            print("Not found")
+
 
 def bubble_sort(array):
     for index in range(len(array)):
@@ -43,6 +42,7 @@ def bubble_sort(array):
             if array[index] > array[index+1]:
                 array[index], array[index+1] = array[index+1], array[index]
     return array
+
 
 def insertion_sort(array):
     for posofnext in range(1, len(array)):
@@ -54,6 +54,7 @@ def insertion_sort(array):
         array[current + 1] = Next
     return array
 
+
 def selection_sort(array):
     for index in range(len(array)):
         Min = index
@@ -63,23 +64,29 @@ def selection_sort(array):
         array[Min], array[index] = array[index], array[Min]
     return array
 
+
 def binary_search(array, target):
+    global found
     low = 0
     high = len(array)-1
     while high >= low:
         mid = (high + low) // 2
         if target == array[mid]:
-            return 1
+            found = True
         if target < array[mid]:
             high = mid-1
         if target > array[mid]:
             low = mid + 1
-    return 0
+    return
+
 
 def linear_search(array, target):
+    global found
     for index in range(len(array)):
         if array[index] == target:
-            return 1
-    return 0
+            found = True
+            return found
+    return
+
 
 main_test()
