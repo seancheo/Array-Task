@@ -3,7 +3,7 @@
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
 # Date: 10/4/2020                                                    #
-# Version number 10                                                 #
+# Version number 10.0                                                #
 ######################################################################
 
 
@@ -150,14 +150,14 @@ class Search(tk.Frame):
         arrayL.grid(row=3, column=1)
         inputframe = tk.Frame(self)
         inputframe.grid(row=3, column=2)
-        inputA = tk.Entry(inputframe, width=25)
+        inputA = tk.Entry(inputframe, width=35)
         inputA.grid()
 
         target = tk.Label(self, text="Target: ")
         target.grid(row=4, column=1)
         inputframe = tk.Frame(self)
         inputframe.grid(row=4, column=2)
-        inputT = tk.Entry(inputframe, width=25)
+        inputT = tk.Entry(inputframe, width=35)
         inputT.grid()
 
         seperator1 = tk.Frame(self, height=5, bd=1)
@@ -171,7 +171,7 @@ class Search(tk.Frame):
         seperator1 = tk.Frame(self, height=2, bd=1)
         seperator1.grid(padx=10, pady=10, sticky="we")
 
-        TOutput = tk.Label(self, text="Output: ")
+        TOutput = tk.Label(self, text="Result: ")
         TOutput.grid(row=9, column=1)
         outputframe = tk.Frame(self)
         outputframe.grid(row=9, column=2)
@@ -195,19 +195,15 @@ class Sort(tk.Frame):
 
         def BubbleB():
             if options_value.get() == 1:
-                BubbleA_sort()
+                BubbleA_sort(array)
             else:
-                BubbleD_sort()
+                BubbleD_sort(array)
             Output.config(state="normal")
             Output.delete(0.0, "end")
             Output.insert("insert", Result)
             Output.config(state="disabled")
 
         def BubbleA_sort():
-            array = inputA.get()
-            array = array.split(",")
-            map_object = map(int, array)
-            array = list(map_object)
             global Result
             for index in range(len(array)):
                 for index in range(len(array)-1):
@@ -217,10 +213,6 @@ class Sort(tk.Frame):
             Result = array
 
         def BubbleD_sort():
-            array = inputA.get()
-            array = array.split(",")
-            map_object = map(int, array)
-            array = list(map_object)
             global Result
             for index in range(len(array)):
                 for index in range(len(array)-1):
@@ -230,20 +222,20 @@ class Sort(tk.Frame):
             Result = array
 
         def SelectionB():
+            array = inputA.get()
+            array = array.split(",")
+            map_object = map(int, array)
+            array = list(map_object)
             if options_value.get() == 1:
-                SelectionA_sort()
+                SelectionA_sort(array)
             else:
-                SelectionD_sort()
+                SelectionD_sort(array)
             Output.config(state="normal")
             Output.delete(0.0, "end")
             Output.insert("insert", Result)
             Output.config(state="disabled")
 
-        def SelectionA_sort():
-            array = inputA.get()
-            array = array.split(",")
-            map_object = map(int, array)
-            array = list(map_object)
+        def SelectionA_sort(array):
             global Result
             for index in range(len(array)):
                 Min = index
@@ -253,11 +245,7 @@ class Sort(tk.Frame):
                 array[Min], array[index] = array[index], array[Min]
             Result = array
 
-        def SelectionD_sort():
-            array = inputA.get()
-            array = array.split(",")
-            map_object = map(int, array)
-            array = list(map_object)
+        def SelectionD_sort(array):
             global Result
             for index in range(len(array)):
                 Min = index
@@ -268,20 +256,20 @@ class Sort(tk.Frame):
             Result = array
 
         def InsertionB():
+            array = inputA.get()
+            array = array.split(",")
+            map_object = map(int, array)
+            array = list(map_object)
             if options_value.get() == 1:
-                InsertionA_sort()
+                InsertionA_sort(array)
             else:
-                InsertionD_sort()
+                InsertionD_sort(array)
             Output.config(state="normal")
             Output.delete(0.0, "end")
             Output.insert("insert", Result)
             Output.config(state="disabled")
 
         def InsertionA_sort():
-            array = inputA.get()
-            array = array.split(",")
-            map_object = map(int, array)
-            array = list(map_object)
             global Result
             for posofnext in range(1, len(array)):
                 Next = array[posofnext]
@@ -293,10 +281,6 @@ class Sort(tk.Frame):
             Result = array
 
         def InsertionD_sort():
-            array = inputA.get()
-            array = array.split(",")
-            map_object = map(int, array)
-            array = list(map_object)
             global Result
             for posofnext in range(1, len(array)):
                 Next = array[posofnext]
