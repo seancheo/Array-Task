@@ -77,7 +77,7 @@ class Search(tk.Frame):
             found = False  # defines found
             while index < len(array) and found == False: #post test loop; array isnt transversed and target isnt found
                 if int(array[index]) == target: #tests if pointer is on target
-                    return "found" #returns to LinearB()
+                    return('found at position', index+1) #returns to LinearB()
                 else:
                     index += 1 #increments index
             if found == False:
@@ -104,7 +104,7 @@ class Search(tk.Frame):
                 if target < int(array[mid]): # compares target to mid
                     high = mid - 1 #makes high of new search area the mid-1 of old search area
                 elif target == int(array[mid]): #checks if target is at mid
-                    return "found" #returns to BinaryB()
+                    return('found at position', mid+1) #returns to BinaryB()
                 else: # only other possibility is target > array[mid]
                     low = mid + 1 #makes low of new search area the mid+1 of old search area
             return "not found" #returns to BinaryB()
