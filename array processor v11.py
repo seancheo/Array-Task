@@ -2,7 +2,7 @@
 # Array Processor                                                    #
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
-# Date: 10/4/2020                                                    #
+# Date: 10/5/2020                                                    #
 # Version number 11.0                                                #
 ######################################################################
 
@@ -77,11 +77,11 @@ class Search(tk.Frame):
             found = False  # defines found
             while index < len(array) and found == False: #post test loop; array isnt transversed and target isnt found
                 if int(array[index]) == target: #tests if pointer is on target
-                    return('found at position', index+1) #returns to LinearB()
+                    return "Found at postion "+(str(index+1)) #returns to LinearB()
                 else:
                     index += 1 #increments index
             if found == False:
-                return "not found" #returns to LinearB()
+                return "Not Found" #returns to LinearB()
 
         def BinaryB():  # Binary Search output button
             array = inputA.get()  # saves the input to array
@@ -104,10 +104,10 @@ class Search(tk.Frame):
                 if target < int(array[mid]): # compares target to mid
                     high = mid - 1 #makes high of new search area the mid-1 of old search area
                 elif target == int(array[mid]): #checks if target is at mid
-                    return('found at position', mid+1) #returns to BinaryB()
+                    return "Found at postion "+(str(mid+1)) #returns to BinaryB()
                 else: # only other possibility is target > array[mid]
                     low = mid + 1 #makes low of new search area the mid+1 of old search area
-            return "not found" #returns to BinaryB()
+            return "Not Found" #returns to BinaryB()
 
         def clear():  # Clear button subprogram
             inputA.delete(0, "end")  # clears input inside array
@@ -172,8 +172,7 @@ class Search(tk.Frame):
         HelpB = tk.Button(self, text="Help", padx=20,command=Help)  # Help button label
         HelpB.grid(row=23, column=1, columnspan=2, sticky="s", pady=10)
 
-        HomeB = tk.Button(self, text="Home",
-                          command=lambda: controller.show_frame("Home"))  # Home button
+        HomeB = tk.Button(self, text="Home",command=lambda: controller.show_frame("Home"))  # Home button
         HomeB.grid(column=2)
 
 
