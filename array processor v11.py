@@ -69,7 +69,7 @@ class Search(tk.Frame):
             Result = Linear_search(array, target)# calls linear search subprogram
             Output.config(state="normal")# allows the output box to be interacted with
             Output.delete(0.0, "end") 
-            Output.insert("insert", Result)# inserts the global variable Result
+            Output.insert("insert", Result)# inserts the variable Result
             Output.config(state="disabled")  # Output cannot be interacted with
 
         def Linear_search(array, target):  # Linear Search algorithm
@@ -92,7 +92,7 @@ class Search(tk.Frame):
             Result = Binary_search(array, target)  # calls binary search
             Output.config(state="normal")# allows the output box to be interacted with
             Output.delete(0.0, "end")
-            Output.insert("insert", Result)# insert the global variable Result
+            Output.insert("insert", Result)# insert the variable Result
             Output.config(state="disabled")  # Output cannot be interacted with
 
         def Binary_search(array, target):  # Binary search algorithm
@@ -191,7 +191,7 @@ class Sort(tk.Frame):
             else:  # calls bubble descending when descending radio button is selected
                 Result = BubbleD_sort(array)
             Output.config(state="normal")# allows the output box to be interacted with
-            Output.delete(0.0, "end")# inserts global variable Result into output
+            Output.delete(0.0, "end")# inserts variable Result into output
             Output.insert("insert", Result)
             Output.config(state="disabled")  # Output cannot be interacted with
 
@@ -220,7 +220,7 @@ class Sort(tk.Frame):
                 Result = SelectionD_sort(array)
             Output.config(state="normal") # allows the output box to be interacted with
             Output.delete(0.0, "end")
-            Output.insert("insert", Result) # inserts global variable Result into output
+            Output.insert("insert", Result) # inserts variable Result into output
             Output.config(state="disabled")  # Output cannot be interacted with
 
         def SelectionA_sort(array):
