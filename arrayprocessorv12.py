@@ -64,8 +64,8 @@ class Search(tk.Frame):
             while True:
                 try:
                     array = inputA.get()  # saves the input to array
-                    map_object = map(int, array)  # converts each element into integers
                     array = array.split(",")
+                    map_object = map(int, array)  # converts each element into integers
                     array = list(map_object)  # saves each element to the array
                     target = int(inputT.get())  # saves the input to target
                     
@@ -97,12 +97,13 @@ class Search(tk.Frame):
                     array = inputA.get()  # saves the input to array
                     array = array.split(",")  # splits the string into elements
                     map_object = map(int, array)  # converts each element into integers
-                    array = list(map_object)  # saves each element to the array
                     target = int(inputT.get())  # saves the input to target
+                    array = list(map_object)  # saves each element to the array
                     break
                 except ValueError:
                     messagebox.showerror(title="Error", message="Enter a numeric value")
                     app.mainloop()
+
             Result = Binary_search(array, target)  # calls binary search
             Output.config(state="normal")# allows the output box to be interacted with
             Output.delete(0.0, "end")
