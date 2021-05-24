@@ -64,7 +64,7 @@ class Search(tk.Frame):
             while True:
                 try:
                     array = inputA.get()  # saves the input to array
-                    array = array.split(",")
+                    array = array.split(" ")
                     map_object = map(int, array)  # converts each element into integers
                     array = list(map_object)  # saves each element to the array
                     target = int(inputT.get())  # saves the input to target
@@ -95,7 +95,7 @@ class Search(tk.Frame):
             while True:
                 try:
                     array = inputA.get()  # saves the input to array
-                    array = array.split(",")  # splits the string into elements
+                    array = array.split(" ")  # splits the string into elements
                     map_object = map(int, array)  # converts each element into integer
                     target = int(inputT.get())  # saves the input to target
                     array = list(map_object)  # saves each element to the array
@@ -200,7 +200,7 @@ class Sort(tk.Frame):
             while True:
                 try:
                     array = inputA.get()  # input for the array
-                    array = array.split(",")  # splits the array with commas
+                    array = array.split(" ")  # splits the array with commas
                     map_object = map(int, array)  # makes elements in arrray integers
                     array = list(map_object)  # saves the int elements to array
                     break
@@ -234,7 +234,7 @@ class Sort(tk.Frame):
             while True:
                 try:
                     array = inputA.get()  # input for the array
-                    array = array.split(",")  # splits the array with commas
+                    array = array.split(" ")  # splits the array with commas
                     map_object = map(int, array)  # makes elements in arrray integers
                     array = list(map_object)  # saves the int elements to array
                     break
@@ -272,7 +272,7 @@ class Sort(tk.Frame):
             while True:
                 try:
                     array = inputA.get()  # input for the array
-                    array = array.split(",")  # splits the array with commas
+                    array = array.split(" ")  # splits the array with commas
                     map_object = map(int, array)  # makes elements in arrray integers
                     array = list(map_object)  # saves the int elements to array
                     break
