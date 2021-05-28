@@ -65,13 +65,10 @@ class Search(tk.Frame):
                 try:
                     array = inputA.get()  # saves the input to array
                     array = array.split(" ")
-                    map_object = map(str, array)  # converts each element into integers
-                    array = list(map_object)  # saves each element to the array
-                    target = str(inputT.get())  # saves the input to target
                     
                     break
-                except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
+                except ValueError:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                    messagebox.showerror(title="Error", message="Enter characters only")
                     app.mainloop()
 
             Result = Linear_search(array, target)# calls linear search subprogram
@@ -222,91 +219,6 @@ class Sort(tk.Frame):
                     if array[index] > array[index+1]: #compares paired elements
                         array[index], array[index +1] = array[index+1], array[index] #swaps so larger element is to the right
             return array #returns to BubbleB()
-
-        def BubbleD_sort(array):
-            for index in range(len(array)): # transverses the array
-                for index in range(len(array)-1): #transverses the array n-1 times
-                    if array[index] < array[index+1]: #compares paired elements
-                        array[index], array[index +1] = array[index+1], array[index] #swaps so larger element is to the right
-            return array #returns to BubbleB()
-
-        def SelectionB():
-            while True:
-                try:
-                    array = inputA.get()  # input for the array
-                    array = array.split(",")  # splits the array with commas
-                    map_object = map(int, array)  # makes elements in arrray integers
-                    array = list(map_object)  # saves the int elements to array
-                    break
-                except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
-                    app.mainloop()
-            if options_value.get() == 1:  # calls selection ascending when ascending radio button is selected
-                Result = SelectionA_sort(array)
-            else:  # calls selection descending when descending radio button is selected
-                Result = SelectionD_sort(array)
-            Output.config(state="normal") # allows the output box to be interacted with
-            Output.delete(0.0, "end")
-            Output.insert("insert", Result) # inserts variable Result into output
-            Output.config(state="disabled")  # Output cannot be interacted with
-
-        def SelectionA_sort(array):
-            for index in range(len(array)): #transverses the array
-                Min = index #declares pointer of the sorted part of the array(assuming the first element is sorted)
-                for unsorted in range(index+1, len(array)): #transverses through unsorted part of the array
-                    if array[Min] > array[unsorted]: #compares unsorted element with sorted element
-                        Min = unsorted #places the unsorted element in the sorted part
-                array[Min], array[index] = array[index], array[Min] #swaps elements
-            return array #returns to SelectionB()
-
-        def SelectionD_sort(array):
-            for index in range(len(array)): #transverses the array
-                Min = index #declares pointer of the sorted part of the array(assuming the first element is sorted)
-                for unsorted in range(index+1, len(array)): #transverses through unsorted part of the array
-                    if array[Min] < array[unsorted]: #compares unsorted element with sorted element
-                        Min = unsorted #places the unsorted element in the sorted part
-                array[Min], array[index] = array[index], array[Min] #swaps elements
-            return array #returns to SelectionB()
-
-        def InsertionB():
-            while True:
-                try:
-                    array = inputA.get()  # input for the array
-                    array = array.split(",")  # splits the array with commas
-                    map_object = map(int, array)  # makes elements in arrray integers
-                    array = list(map_object)  # saves the int elements to array
-                    break
-                except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
-                    app.mainloop()
-            if options_value.get() == 1:  # calls insertion ascending when ascending radio button is selected
-                Result = InsertionA_sort(array)
-            else:  # calls insertion descending when descending radio button is selected
-                Result = InsertionD_sort(array)
-            Output.config(state="normal")# allows the output box to be interacted with
-            Output.delete(0.0, "end")
-            Output.insert("insert", Result) # inserts Result into output
-            Output.config(state="disabled")  # Output cannot be interacted with
-
-        def InsertionA_sort(array):
-            for posofnext in range(1, len(array)): #transverses the array, note 1 assumes first element as sorted
-                Next = array[posofnext] #saves value of unsorted element to be inserted
-                current = posofnext-1 #defines position of sorted element
-                while current >= 0 and Next < array[current]: #post test loop; keeps current within range, compares an unsorted and a sorted element
-                    array[current + 1] = array[current] #makes space
-                    current -= 1 #decrements current
-                array[current + 1] = Next #inserts element in the correct position in the sorted part of the array
-            return array #returns to InsertionB()
-
-        def InsertionD_sort(array):
-            for posofnext in range(1, len(array)): #transverses the array, note 1 assumes first element as sorted
-                Next = array[posofnext] #saves value of unsorted element to be inserted
-                current = posofnext-1 #defines position of sorted element
-                while current >= 0 and Next > array[current]: #post test loop; keeps current within range, compares an unsorted and a sorted element
-                    array[current + 1] = array[current] #makes space
-                    current -= 1 #decrements current
-                array[current + 1] = Next #inserts element in the correct position in the sorted part of the array
-            return array #returns to InsertionB()
 
         def clear():  # clear button subprogram
             inputA.delete(0, "end")  # clears array inside input box
