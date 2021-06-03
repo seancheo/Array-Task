@@ -2,8 +2,8 @@
 # Array Processor                                                    #
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
-# Date: 23/3/2020                                                   #
-# Version number 1.0                                                #
+# Date: 23/3/2020                                                    #
+# Version number 1.0.0                                               #
 ######################################################################
 
 
@@ -17,9 +17,6 @@ class SampleApp(tk.Tk):
 
         self.title_font = tkfont.Font(family='arial', size=18, weight="bold", slant="italic")
 
-        # the container is where we'll stack a bunch of frames
-        # on top of each other, then the one we want visible
-        # will be raised above the others
         container = tk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
@@ -31,9 +28,6 @@ class SampleApp(tk.Tk):
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
 
-            # put all of the pages in the same location;
-            # the one on the top of the stacking order
-            # will be the one that is visible.
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame("Home")
