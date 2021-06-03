@@ -2,8 +2,8 @@
 # Array Processor                                                    #
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
-# Date: 10/4/2020                                                    #
-# Version number 4.0                                                 #
+# Date: 10/4/2021                                                    #
+# Version number 1.5.0                                                #
 ######################################################################
 
 
@@ -19,9 +19,6 @@ class main(tk.Tk):
 
         self.title_font = tkfont.Font(family='arial', size=18, weight="bold", slant="italic")
 
-        # the container is where we'll stack a bunch of frames
-        # on top of each other, then the one we want visible
-        # will be raised above the others
         container = tk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
@@ -32,10 +29,7 @@ class main(tk.Tk):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
-
-            # put all of the pages in the same location;
-            # the one on the top of the stacking order
-            # will be the one that is visible.
+            
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame("Home")
@@ -79,7 +73,7 @@ class Search(tk.Frame):
             Output.config(state="disabled")
             
         def binary_search():
-            arrayvalue = inputarray.get())
+            arrayvalue = inputarray.get()
             arrayvalue = arrayvalue.split(" ")
             searchvalue = int(inputSearchValue.get())
             low = 0
@@ -208,4 +202,3 @@ class Sort(tk.Frame):
 if __name__ == "__main__":
     main = main()
     main.mainloop()
-
