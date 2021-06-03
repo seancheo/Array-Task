@@ -3,7 +3,7 @@
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
 # Date: 10/4/2020                                                    #
-# Version number 4.0                                                 #
+# Version number 1.7.0                                               #
 ######################################################################
 
 
@@ -18,10 +18,7 @@ class main(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
 
         self.title_font = tkfont.Font(family='arial', size=18, weight="bold", slant="italic")
-
-        # the container is where we'll stack a bunch of frames
-        # on top of each other, then the one we want visible
-        # will be raised above the others
+        
         container = tk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
@@ -33,9 +30,6 @@ class main(tk.Tk):
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
 
-            # put all of the pages in the same location;
-            # the one on the top of the stacking order
-            # will be the one that is visible.
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame("Home")
@@ -76,7 +70,6 @@ class Search(tk.Frame):
             
         def Linear_search():
             array = inputA.get()
-            array = array.split(",")
             target = int(inputT.get())
             index = 0
             found = False
@@ -101,7 +94,6 @@ class Search(tk.Frame):
             
         def Binary_search():
             array = inputA.get()
-            array = array.split(",")
             target = int(inputT.get())
             index = 1
             found = False
@@ -210,7 +202,6 @@ class Sort(tk.Frame):
         def BubbleA_sort():
 
             array = inputA.get()
-            array = array.split(",")
             global Result
             for index in range(len(array)):
                 for index in range(len(array)-1):
@@ -243,7 +234,6 @@ class Sort(tk.Frame):
 
         def SelectionA_sort():
             array = inputA.get()
-            array = array.split(",")
             global Result
             for index in range(len(array)-1):
                 Min = index
@@ -255,7 +245,6 @@ class Sort(tk.Frame):
 
         def SelectionD_sort():
             array = inputA.get()
-            array = array.split(",")
             global Result
             for index in range(len(array)-1):
                 Min = index
@@ -278,7 +267,6 @@ class Sort(tk.Frame):
             
         def InsertionA_sort():
             array = inputA.get()
-            array = array.split(",")
             global Result
             for posofnext in range(1, len(array)):
                 Next = array[posofnext]
