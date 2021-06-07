@@ -392,10 +392,10 @@ class Astring(tk.Frame):
     def __init__(self, parent, controller):
         def BubbleB():
             array = inputA.get()  # input for the array
-            array = array.split(" ")  # splits the array with commas
+            array = array.split(" ") # splits the array with commas
             Result = BubbleA_sort(array)
-            Output.config(state="normal")# allows the output box to be interacted with
-            Output.delete(0.0, "end")# inserts variable Result into output
+            Output.config(state="normal") # allows the output box to be interacted with
+            Output.delete(0.0, "end") # inserts variable Result into output
             Output.insert("insert", Result)
             Output.config(state="disabled")  # Output cannot be interacted with
             
@@ -487,7 +487,7 @@ class Astring(tk.Frame):
 
         tk.Frame.__init__(self, parent)
         self.controller = controller
-        # Title for sort
+        # Title for Array of Strings
         label = tk.Label(self, text="Array of Strings", font=controller.title_font)
         label.grid(row=1, column=1, columnspan=2)
 
