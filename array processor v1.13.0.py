@@ -512,13 +512,13 @@ class Astring(tk.Frame):
         seperator2 = tk.Frame(self, height=2, bd=2)  # Creates space in the GUI
         seperator2.grid(padx=5, pady=5, sticky="we")
 
-        BubbleB = tk.Button(self, text="Bubble", padx=20,command = BubbleB)  # Button for binary sort
+        BubbleB = tk.Button(self, text="Bubble", padx=20,command = BubbleB)  # Button for bubble sort
         BubbleB.grid(row=11, column=1, sticky="es")
-        LinearB = tk.Button(self, text="Linear", padx=20,command = LinearB)  # Button for selection sort
+        LinearB = tk.Button(self, text="Linear", padx=20,command = LinearB)  # Button for Linear search
         LinearB.grid(row=11, column=2, sticky="s")
-        BinaryB = tk.Button(self, text="Binary", padx=20, command = BinaryB)  # Button for insertion sort
+        BinaryB = tk.Button(self, text="Binary", padx=20, command = BinaryB)  # Button for Binary search
         BinaryB.grid(row=11, column=3, sticky="s")
-        ArrayOB = tk.Button(self, text="Array of Strings", padx=20,command = outputB)  # Button for selection sort
+        ArrayOB = tk.Button(self, text="Array of Strings", padx=20,command = outputB)  # Button for Array of strings
         ArrayOB.grid(row=12, column=2, sticky="s")
 
         seperator3 = tk.Frame(self, height=2, bd=1)  # Creates space in the GUI
@@ -541,7 +541,7 @@ class Astring(tk.Frame):
         HelpB = tk.Button(self, text="Help", padx=20,command=Help)  # Help Button
         HelpB.grid(row=23, column=1, columnspan=2, sticky="s", pady=10)
 
-        HomeB = tk.Button(self, text="Home",command=lambda: controller.show_frame("Home"))  # help button
+        HomeB = tk.Button(self, text="Home",command=lambda: controller.show_frame("Home"))  # Help button
         HomeB.grid(column=2)
 
 
