@@ -3,7 +3,7 @@
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
 # Date: 10/5/2020                                                    #
-# Version number 11.0                                                #
+# Version number 1.9.0                                               #
 ######################################################################
 
 
