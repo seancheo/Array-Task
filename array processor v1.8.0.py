@@ -3,7 +3,7 @@
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
 # Date: 10/4/2020                                                    #
-# Version number 9.0                                                 #
+# Version number 1.8.0                                               #
 ######################################################################
 
 
@@ -381,4 +381,3 @@ class Sort(tk.Frame):
 if __name__ == "__main__":
     main = main()
     main.mainloop()
-
