@@ -3,7 +3,7 @@
 # This program sorts arrays and searches for values                  #
 # Author: Martin Vu and Sean Cheong                                  #
 # Date: 10/4/2020                                                    #
-# Version number 10.0                                                #
+# Version number 1.9.0                                               #
 ######################################################################
 
 
@@ -194,6 +194,10 @@ class Sort(tk.Frame):
     def __init__(self, parent, controller):
 
         def BubbleB():
+            array = inputA.get()
+            array = array.split(",")
+            map_object = map(int, array)
+            array = list(map_object)
             if options_value.get() == 1:
                 BubbleA_sort(array)
             else:
