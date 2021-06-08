@@ -201,16 +201,7 @@ class Sort(tk.Frame):
     def __init__(self, parent, controller):
 
         def BubbleB():
-            while True:
-                try:
-                    array = inputA.get()  # input for the array
-                    array = array.split(" ")  # splits the array with commas
-                    map_object = map(int, array)  # makes elements in arrray integers
-                    array = list(map_object)  # saves the int elements to array
-                    break
-                except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
-                    app.mainloop()
+
             if options_value.get() == 1:  # calls bubble ascending when ascending radio button is selected
                 Result = BubbleA_sort(array)
             else:  # calls bubble descending when descending radio button is selected
