@@ -1,3 +1,4 @@
+  
 ######################################################################
 # Array Processor                                                    #
 # This program sorts arrays and searches for values                  #
@@ -208,7 +209,7 @@ class Sort(tk.Frame):
                     array = list(map_object)  # saves the int elements to array
                     break
                 except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
+                    messagebox.showerror(title="Error", message="Enter an array of integers")
                     app.mainloop()
             if options_value.get() == 1:  # calls bubble ascending when ascending radio button is selected
                 Result = BubbleA_sort(array)
@@ -242,7 +243,7 @@ class Sort(tk.Frame):
                     array = list(map_object)  # saves the int elements to array
                     break
                 except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
+                    messagebox.showerror(title="Error", message="Enter an array of integers")
                     app.mainloop()
             if options_value.get() == 1:  # calls selection ascending when ascending radio button is selected
                 Result = SelectionA_sort(array)
@@ -280,7 +281,7 @@ class Sort(tk.Frame):
                     array = list(map_object)  # saves the int elements to array
                     break
                 except ValueError:
-                    messagebox.showerror(title="Error", message="Enter a numeric value")
+                    messagebox.showerror(title="Error", message="Enter an array of integers")
                     app.mainloop()
             if options_value.get() == 1:  # calls insertion ascending when ascending radio button is selected
                 Result = InsertionA_sort(array)
@@ -548,3 +549,4 @@ class Astring(tk.Frame):
 if __name__ == "__main__":
     app = app()
     app.mainloop()
+                                                                                                             
